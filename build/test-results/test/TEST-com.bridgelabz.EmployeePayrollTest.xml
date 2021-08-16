@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bridgelabz.EmployeePayrollTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-16T14:41:52" hostname="DESKTOP-1A5CKOQ" time="0.644">
+  <properties/>
+  <testcase name="givenEmployeePayrollInDB_WhenRetrieved_ShouldMatchEmployeeCount" classname="com.bridgelabz.EmployeePayrollTest" time="0.644"/>
+  <system-out><![CDATA[Connecting to database: jdbc:mysql://localhost:3306/payroll_service?useSSL=false
+Connection is successful! com.mysql.cj.jdbc.ConnectionImpl@5232f57d
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

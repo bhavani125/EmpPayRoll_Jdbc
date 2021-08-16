@@ -37,7 +37,6 @@ public class DBDemo {
         while (driverList.hasMoreElements()) {
             Driver driverClass = (Driver) driverList.nextElement();
             System.out.println("  "+driverClass.getClass().getName());
-
         }
     }
 }
