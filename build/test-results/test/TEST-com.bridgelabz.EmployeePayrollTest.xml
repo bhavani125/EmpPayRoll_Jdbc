@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz.EmployeePayrollTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-16T14:41:52" hostname="DESKTOP-1A5CKOQ" time="0.644">
+<testsuite name="com.bridgelabz.EmployeePayrollTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-16T17:27:53" hostname="DESKTOP-1A5CKOQ" time="0.964">
   <properties/>
-  <testcase name="givenEmployeePayrollInDB_WhenRetrieved_ShouldMatchEmployeeCount" classname="com.bridgelabz.EmployeePayrollTest" time="0.644"/>
+  <testcase name="givenNewSalaryForEmployee_WhenUpdated_ShouldSyncWithDB" classname="com.bridgelabz.EmployeePayrollTest" time="0.964"/>
   <system-out><![CDATA[Connecting to database: jdbc:mysql://localhost:3306/payroll_service?useSSL=false
-Connection is successful! com.mysql.cj.jdbc.ConnectionImpl@5232f57d
+Connection is successful! com.mysql.cj.jdbc.ConnectionImpl@17d54f38
+Connecting to database: jdbc:mysql://localhost:3306/payroll_service?useSSL=false
+Connection is successful! com.mysql.cj.jdbc.ConnectionImpl@1829323d
+Connecting to database: jdbc:mysql://localhost:3306/payroll_service?useSSL=false
+Connection is successful! com.mysql.cj.jdbc.ConnectionImpl@e16a987
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
