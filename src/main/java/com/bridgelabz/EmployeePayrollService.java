@@ -65,5 +65,9 @@ public class EmployeePayrollService {
             return employeePayrollDBService.getAverageSalaryByGender();
         return null;
     }
+    //to add the employee to db
+    public void addEmployeeToPayroll(String name, String gender, double salary, LocalDate startDate) throws  EmployeePayrollException{
+            employeePayrollList.add(employeePayrollDBService.addEmployeeToPayroll( name, gender, salary, startDate));
+        }
 
 }

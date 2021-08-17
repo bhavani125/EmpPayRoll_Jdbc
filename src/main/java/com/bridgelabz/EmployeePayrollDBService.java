@@ -152,4 +152,22 @@ public class EmployeePayrollDBService {
         }
         return genderToAverageSalaryMap;
     }
+    //to add the new employee to db
+    public EmployeePayrollData addEmployeeToPayroll(String name, String gender, double salary, LocalDate startDate) throws  EmployeePayrollException {
+        int employeeId = -1;
+        EmployeePayrollData employeePayrollData = null;
+        String sql = String.format("INSERT INTO employee_payroll (name,gender,salary,start) " +"VALUES ('%s','%s',%s,'%s')",name,gender,salary,Date.valueOf(startDate));
+        try (Connection connection = this.getConnection()) {
+            Statement statement = connection.createStatement();
+            int rowAffected = statement.executeUpdate(sql, statement.RETURN_GENERATED_KEYS);
+            if (rowAffected == 1) {
+                ResultSet resultSet = statement.getGeneratedKeys();
+                if (resultSet.next()) employeeId = resultSet.getInt(1);
+                employeePayrollData = new EmployeePayrollData(employeeId, name, salary, startDate);
+            }
+        }catch (SQLException e) {
+            throw new EmployeePayrollException("Connection To Database Failed !");
+        }
+        return employeePayrollData;
+    }
 }

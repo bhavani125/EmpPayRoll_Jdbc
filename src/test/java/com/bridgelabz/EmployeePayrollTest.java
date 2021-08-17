@@ -65,4 +65,15 @@ public class EmployeePayrollTest {
             e.printStackTrace();
         }
     }
+     //to add new employee to db
+    @Test
+    public void givenNewEmployee_WhenAdded_ShouldSyncWithDataBase() throws EmployeePayrollException {
+        try {
+            employeePayrollService.readEmployeePayrollData(DB_IO);
+            employeePayrollService.addEmployeeToPayroll("Bhavani","F",4000000.00,LocalDate.now());
+            boolean result = employeePayrollService.checkEmployeePayrollInSyncWithDB("Bhavani");
+        } catch ( EmployeePayrollException e) {
+            e.printStackTrace();
+        }
+    }
 }
