@@ -12,7 +12,7 @@ public class EmployeePayrollDBService {
 
     private EmployeePayrollDBService() {
     }
-    // For creating a singleton object
+    // For creating the singleton object
     public static EmployeePayrollDBService getInstance() {
         if (employeePayrollDBService == null)
             employeePayrollDBService = new EmployeePayrollDBService();
