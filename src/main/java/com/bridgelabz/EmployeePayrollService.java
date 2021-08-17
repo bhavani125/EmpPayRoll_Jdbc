@@ -1,5 +1,6 @@
 package com.bridgelabz;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class EmployeePayrollService {
@@ -29,6 +30,14 @@ public class EmployeePayrollService {
         if( employeePayrollData != null )
             employeePayrollData.salary = salary;
     }
+    public void updateEmployeeSalaryUsingPreparedStatement(String name, double salary) throws EmployeePayrollException {
+        int result = employeePayrollDBService.updateEmployeeDataPreparedStatement(name, salary);
+        if(result == 0)
+            return;
+        EmployeePayrollData employeePayrollData = this.getEmployeePayrollData(name);
+        if( employeePayrollData != null )
+            employeePayrollData.salary = salary;
+    }
 
     // checking whether the EmployeePayrollData is in sync with the DB
     public boolean checkEmployeePayrollInSyncWithDB(String name) throws EmployeePayrollException {
@@ -43,4 +52,11 @@ public class EmployeePayrollService {
                 .findFirst()
                 .orElse(null);
     }
+    //Retrieve the data for a particular date range
+    public List<EmployeePayrollData> readEmployeePayrollForDateRange(IOService ioService, LocalDate startDate, LocalDate endDate) throws EmployeePayrollException {
+        if( ioService.equals(IOService.DB_IO))
+            return employeePayrollDBService.getEmployeeForDateRange(startDate, endDate);
+        return null;
+    }
+
 }

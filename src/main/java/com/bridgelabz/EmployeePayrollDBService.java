@@ -51,6 +51,20 @@ public class EmployeePayrollDBService {
             throw new EmployeePayrollException("Please check the updateEmployeeDataUsingStatement() for detailed information!");
         }
     }
+
+    public int updateEmployeeDataPreparedStatement(String name, double salary) throws EmployeePayrollException {
+        String sql = "UPDATE employee_payroll SET salary = ? WHERE name = ?";
+        try (Connection connection = this.getConnection()) {
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setDouble(1, salary);
+            statement.setString(2, name);
+
+            return statement.executeUpdate();
+        } catch (SQLException e) {
+            throw new EmployeePayrollException("Please check the updateEmployeeDataUsingPreparedStatement() for detailed information!");
+        }
+    }
+
     // Get the list of EmployeePayrollData using the assigned name
     // setString() is used to set the assigned name value in the sql query
     //Return all the attribute values listed for a particular name
@@ -113,4 +127,11 @@ public class EmployeePayrollDBService {
         }
         return employeePayrollList;
     }
+
+    public List<EmployeePayrollData> getEmployeeForDateRange(LocalDate startDate, LocalDate endDate) throws EmployeePayrollException {
+        String sql = String.format("SELECT * FROM employee_payroll",
+                Date.valueOf(startDate), Date.valueOf(endDate));
+        return getEmployeePayrollDataUsingDB(sql);
+    }
+
 }
