@@ -19,7 +19,7 @@ public class EmployeePayrollDBService {
         return employeePayrollDBService;
     }
 
-    // Read the employee payroll data from the database
+    // Reading the employee payroll data from the database
     public List<EmployeePayrollData> readData() throws EmployeePayrollException {
         String sql = "SELECT * FROM employee_payroll";
         return getEmployeePayrollDataUsingDB(sql);
@@ -94,7 +94,6 @@ public class EmployeePayrollDBService {
             throw new EmployeePayrollException("Please check the preparedStatementForEmployeeData() for detailed information!");
         }
     }
-
     //Create connection to execute query and read the value from the database
     //Assign the value in a list variable
     private List<EmployeePayrollData> getEmployeePayrollDataUsingDB(String sql) throws EmployeePayrollException {

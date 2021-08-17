@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz.EmployeePayrollTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-16T17:27:53" hostname="DESKTOP-1A5CKOQ" time="0.964">
+<testsuite name="com.bridgelabz.EmployeePayrollTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-17T12:20:44" hostname="DESKTOP-1A5CKOQ" time="0.876">
   <properties/>
-  <testcase name="givenNewSalaryForEmployee_WhenUpdated_ShouldSyncWithDB" classname="com.bridgelabz.EmployeePayrollTest" time="0.964"/>
+  <testcase name="givenNewSalaryForEmployee_WhenUpdated_ShouldSyncWithDBUsingPreparedStatement" classname="com.bridgelabz.EmployeePayrollTest" time="0.876"/>
   <system-out><![CDATA[Connecting to database: jdbc:mysql://localhost:3306/payroll_service?useSSL=false
 Connection is successful! com.mysql.cj.jdbc.ConnectionImpl@17d54f38
 Connecting to database: jdbc:mysql://localhost:3306/payroll_service?useSSL=false
